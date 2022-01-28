@@ -36,6 +36,8 @@ commands:
           name: Configure AWS
           command: |
             mkdir -p ~/.aws
+            echo $AWS_ACCESS_KEY_ID
+            echo $AWS_SECRET_ACCESS_KEY
             cp .circleci/aws_config ~/.aws/config
             echo -e $AWS_PROD_PROFILE >> ~/.aws/config
       - aws-s3/copy:
